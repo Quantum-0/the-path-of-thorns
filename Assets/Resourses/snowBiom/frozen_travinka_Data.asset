@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a64e5b0e436d4bed9780211ae245f7b, type: 3}
+  m_Name: frozen_travinka_Data
+  m_EditorClassIdentifier: 
+  dataName: frozen_travinka
+  dragonBonesJSON: {fileID: 4900000, guid: 09f31c8d88643144184c46a97aa8fdcc, type: 3}
+  textureAtlas:
+  - textureAtlasJSON: {fileID: 4900000, guid: 9f8076a6b7bf6ec4a8d565e9c30e9ca6, type: 3}
+    texture: {fileID: 2800000, guid: cb679b1843064934e9ce495723d66f74, type: 3}
+    material: {fileID: 2100000, guid: c3ee520fc9a4c2f4585231e59ea499b4, type: 2}
+    uiMaterial: {fileID: 0}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a64e5b0e436d4bed9780211ae245f7b, type: 3}
+  m_Name: hill_kustick_Data
+  m_EditorClassIdentifier: 
+  dataName: hill_kustick
+  dragonBonesJSON: {fileID: 4900000, guid: 1f9ed6d3130ceb44b99c5024a149ee94, type: 3}
+  textureAtlas:
+  - textureAtlasJSON: {fileID: 4900000, guid: 8b3b4c06ceafed24a9fcf462d3f9a262, type: 3}
+    texture: {fileID: 2800000, guid: 1300c9c1ed5fbcf4986b78d6242b187c, type: 3}
+    material: {fileID: 2100000, guid: 911f7330f5ab47f4e918360b86747729, type: 2}
+    uiMaterial: {fileID: 0}

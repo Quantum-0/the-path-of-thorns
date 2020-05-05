@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a64e5b0e436d4bed9780211ae245f7b, type: 3}
+  m_Name: derevo_tree_fon_1_Data
+  m_EditorClassIdentifier: 
+  dataName: derevo_tree_fon_1
+  dragonBonesJSON: {fileID: 4900000, guid: 1305431cbe2180d47b7d9b972a35327b, type: 3}
+  textureAtlas:
+  - textureAtlasJSON: {fileID: 4900000, guid: 8210b6bd9f426db43a3e626d3b1fa055, type: 3}
+    texture: {fileID: 2800000, guid: 11c449697e66a6a4ea29efdc4c5b49f7, type: 3}
+    material: {fileID: 2100000, guid: a64f6536bc6a4564d9f23a5c05c5fe8e, type: 2}
+    uiMaterial: {fileID: 0}

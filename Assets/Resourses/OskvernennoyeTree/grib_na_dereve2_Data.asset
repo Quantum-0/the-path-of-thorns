@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a64e5b0e436d4bed9780211ae245f7b, type: 3}
+  m_Name: grib_na_dereve2_Data
+  m_EditorClassIdentifier: 
+  dataName: grib_na_dereve2
+  dragonBonesJSON: {fileID: 4900000, guid: 934211896116feb4eafc6f2f0ac35f75, type: 3}
+  textureAtlas:
+  - textureAtlasJSON: {fileID: 4900000, guid: 70e3c321ece130141acc1a2ee8b925d0, type: 3}
+    texture: {fileID: 2800000, guid: ce6303190a39d7941960020dea55b493, type: 3}
+    material: {fileID: 2100000, guid: e0c7ab017175ff8408cf6c2872d6168f, type: 2}
+    uiMaterial: {fileID: 0}

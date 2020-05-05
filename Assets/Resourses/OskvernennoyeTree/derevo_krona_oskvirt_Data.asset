@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a64e5b0e436d4bed9780211ae245f7b, type: 3}
+  m_Name: derevo_krona_oskvirt_Data
+  m_EditorClassIdentifier: 
+  dataName: derevo_krona_oskvirt
+  dragonBonesJSON: {fileID: 4900000, guid: 750289bf8a7e76447888af38c6087ff1, type: 3}
+  textureAtlas:
+  - textureAtlasJSON: {fileID: 4900000, guid: 7224b9a4a2cd03e44a4ce852bd1dea0e, type: 3}
+    texture: {fileID: 2800000, guid: 4e279646c16d7cd4686d56f85013d6f9, type: 3}
+    material: {fileID: 2100000, guid: b727014d1a1b63d4289b02a4b2f8990b, type: 2}
+    uiMaterial: {fileID: 0}
