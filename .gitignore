@@ -6,6 +6,18 @@
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 
+# OS generated
+.DS_Store*
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+[Tt]humbs.db
+[Dd]esktop.ini
+Corridor/Library/ShaderCache/
+Corridor/Library/metadata/
+
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 # /[Mm]emoryCaptures/
