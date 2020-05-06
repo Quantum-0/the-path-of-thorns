@@ -1,40 +1,21 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
-    int snd;
-    [SerializeField] Button btn;
-
     private void Start()
     {
-        snd = PlayerPrefs.GetInt("sound");
-
-        if(snd == 0)
+        if (PlayerPrefs.GetInt("sound") == 0)
         {
             PlayerPrefs.SetInt("sound", 1);
         }
-
-        var colors = btn.colors;
-
-        if (snd == 1)
-        {
-            colors.normalColor = new Color(0, 0, 0, .3411f);
-            colors.selectedColor = new Color(0, 0, 0, .3411f);
-        }
-        else if (snd == -1)
-        {
-            colors.normalColor = new Color(255, 255, 255, .3411f);
-            colors.selectedColor = new Color(255, 255, 255, .3411f);
-        }
-
-        btn.colors = colors;
     }
-
+    
     public void PlayGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void ExitGame()
@@ -46,22 +27,6 @@ public class Menu : MonoBehaviour
     {
         PlayerPrefs.SetInt("sound", -PlayerPrefs.GetInt("sound"));
 
-        Debug.Log(PlayerPrefs.GetInt("sound"));
-
-
-        var colors = btn.colors;
-
-        if (PlayerPrefs.GetInt("sound") > 0)
-        {
-            colors.normalColor = new Color(0, 0, 0, .3411f);
-            colors.selectedColor = new Color(0, 0, 0, .3411f);
-        }
-        else if(PlayerPrefs.GetInt("sound") < 0)
-        {
-            colors.normalColor = new Color(255, 255, 255, .3411f);
-            colors.selectedColor = new Color(255, 255, 255, .3411f);
-        }
-
-        btn.colors = colors;
+#warning TODO: Отобразить полосу изменения громкости
     }
 }
