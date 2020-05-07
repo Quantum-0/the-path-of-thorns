@@ -38,17 +38,6 @@ public class Menu : MonoBehaviour
 
     public void ChangeVolume(float volume)
     {
-        if (volume < .1f)
-        {
-            PlayerPrefs.SetFloat("volume", 0);
-        }
-        else if(volume > .9f)
-        {
-            PlayerPrefs.SetFloat("volume", 1);
-        }
-        else
-        {
-            PlayerPrefs.SetFloat("volume", volume);
-        }
+        PlayerPrefs.SetFloat("volume", volume);
     }
 }

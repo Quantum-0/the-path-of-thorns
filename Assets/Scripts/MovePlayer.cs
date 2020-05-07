@@ -299,8 +299,9 @@ public class MovePlayer : MonoBehaviour
 
     void AudioSystem(string nameOfClip)
     {
-        if(PlayerPrefs.GetInt("sound") > 0)
+        if (PlayerPrefs.GetFloat("volume") > 0)
         {
+            GetComponents<AudioSource>().FirstOrDefault(s => s.clip.name == nameOfClip).volume = PlayerPrefs.GetFloat("volume");
             GetComponents<AudioSource>().FirstOrDefault(s => s.clip.name == nameOfClip)?.Play();
         }
     }

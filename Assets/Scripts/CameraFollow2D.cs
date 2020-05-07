@@ -111,8 +111,9 @@ public class CameraFollow2D : MonoBehaviour
 
         cristalCanvas.SetActive(true);
 
-        if (PlayerPrefs.GetInt("sound") > 0)
+        if (PlayerPrefs.GetFloat("volume") > 0)
         {
+            AudioSrs.volume = PlayerPrefs.GetFloat("volume");
             AudioSrs.Play();
         }
 

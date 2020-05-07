@@ -11,18 +11,7 @@ public class SecondEpMusic : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    { 
-        nowPlay = MusicFolder.transform.GetChild(0).gameObject;
-
-        if (PlayerPrefs.GetInt("sound") > 0)
-        {
-            nowPlay.GetComponent<AudioSource>().volume = .2f;
-        }
-        else
-        {
-            nowPlay.GetComponent<AudioSource>().volume = 0f;
-        }
-
+    {
     }
 
     // Update is called once per frame
@@ -68,6 +57,7 @@ public class SecondEpMusic : MonoBehaviour
 
     void Transition()
     {
+        #region other transition effect
         //if (changingAudio)
         //{
         //    if (nowPlay.GetComponent<AudioSource>().volume != 0)
@@ -98,33 +88,61 @@ public class SecondEpMusic : MonoBehaviour
         //        transitioning = false;
         //    }
         //}
-        
-        if(nowPlay != toPlay && PlayerPrefs.GetInt("sound") > 0)
+        #endregion
+
+        if(nowPlay != toPlay && PlayerPrefs.GetFloat("volume") > 0)
         {
-            AudioSource nowPlayAS = nowPlay.GetComponent<AudioSource>();
-            AudioSource toPlayAS = toPlay.GetComponent<AudioSource>();
-            
-            if (!toPlayAS.isPlaying)
+            if (nowPlay.GetComponent<AudioSource>())
             {
-                toPlayAS.volume = 0;
-                toPlayAS.Play();
+                Debug.Log("fuuuu");
+                AudioSource nowPlayAS = nowPlay.GetComponent<AudioSource>();
+                AudioSource toPlayAS = toPlay.GetComponent<AudioSource>();
+
+                if (!toPlayAS.isPlaying)
+                {
+                    toPlayAS.volume = 0;
+                    toPlayAS.Play();
+                }
+
+                if (toPlayAS.volume < .2f * PlayerPrefs.GetFloat("volume") - .001f)
+                {
+                    nowPlayAS.volume = Mathf.Lerp(nowPlayAS.volume, 0, Time.deltaTime * 5);
+
+                    toPlayAS.volume = Mathf.Lerp(toPlayAS.volume, .2f * PlayerPrefs.GetFloat("volume"), Time.deltaTime * 5);
+
+                }
+                if (toPlayAS.volume >= .2f * PlayerPrefs.GetFloat("volume") - .001f)
+                {
+                    nowPlayAS.Stop();
+                    nowPlayAS.volume = 0;
+                    toPlayAS.volume = .2f * PlayerPrefs.GetFloat("volume");
+
+                    nowPlay = toPlay;
+                    transitioning = false;
+                }
             }
-
-            if (nowPlayAS.volume != 0)
+            else
             {
-                nowPlayAS.volume = Mathf.Lerp(nowPlayAS.volume, 0, Time.deltaTime * 5);
-                
-                toPlayAS.volume = Mathf.Lerp(toPlayAS.volume, .2f, Time.deltaTime * 5);
+                AudioSource toPlayAS = toPlay.GetComponent<AudioSource>();
 
-            }
-            if (nowPlayAS.volume <= 0.005f)
-            {
-                nowPlayAS.Stop();
-                nowPlayAS.volume = 0;
-                toPlayAS.volume = .2f;
+                if (!toPlayAS.isPlaying)
+                {
+                    toPlayAS.volume = 0;
+                    toPlayAS.Play();
+                }
 
-                nowPlay = toPlay;
-                transitioning = false;
+                if (toPlayAS.volume < .2f * PlayerPrefs.GetFloat("volume") - .001f)
+                {
+                    toPlayAS.volume = Mathf.Lerp(toPlayAS.volume, .2f * PlayerPrefs.GetFloat("volume"), Time.deltaTime * 5);
+
+                }
+                if (toPlayAS.volume >= .2f * PlayerPrefs.GetFloat("volume") - .001f)
+                {
+                    toPlayAS.volume = .2f * PlayerPrefs.GetFloat("volume");
+
+                    nowPlay = toPlay;
+                    transitioning = false;
+                }
             }
         }
     }
