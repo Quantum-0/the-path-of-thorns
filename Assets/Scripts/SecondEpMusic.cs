@@ -8,6 +8,7 @@ public class SecondEpMusic : MonoBehaviour
     GameObject toPlay;
     bool changingAudio;
     bool transitioning;
+    bool firstTrans = true;
 
     // Start is called before the first frame update
     void Start()
@@ -92,7 +93,7 @@ public class SecondEpMusic : MonoBehaviour
 
         if(nowPlay != toPlay && PlayerPrefs.GetFloat("volume") > 0)
         {
-            if (nowPlay.GetComponent<AudioSource>())
+            if (!firstTrans)
             {
                 Debug.Log("fuuuu");
                 AudioSource nowPlayAS = nowPlay.GetComponent<AudioSource>();
@@ -142,6 +143,7 @@ public class SecondEpMusic : MonoBehaviour
 
                     nowPlay = toPlay;
                     transitioning = false;
+                    firstTrans = false;
                 }
             }
         }
