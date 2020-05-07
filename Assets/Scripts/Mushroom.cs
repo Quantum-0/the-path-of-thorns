@@ -70,9 +70,16 @@ public class Mushroom : MonoBehaviour
 
     void AudioSystem(string nameOfClip)
     {
-        if (PlayerPrefs.GetInt("sound") > 0)
+        var a = GetComponents<AudioSource>().FirstOrDefault(s => s.clip.name == nameOfClip);
+
+        if (a != null)
         {
-            GetComponents<AudioSource>().FirstOrDefault(s => s.clip.name == nameOfClip)?.Play();
+            a.volume = PlayerPrefs.GetFloat("volume");
+            a.Play();
+        }
+        else
+        {
+            Debug.Log("Звук не найден");
         }
     }
 

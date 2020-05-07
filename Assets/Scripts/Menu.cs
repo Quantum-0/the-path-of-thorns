@@ -1,10 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    [SerializeField] GameObject MainPanel;
+    [SerializeField] GameObject SoundPanel;
+
     private void Start()
     {
         if (PlayerPrefs.GetInt("sound") == 0)
@@ -25,8 +26,18 @@ public class Menu : MonoBehaviour
 
     public void SoundSettings()
     {
-        PlayerPrefs.SetInt("sound", -PlayerPrefs.GetInt("sound"));
+        MainPanel.SetActive(false);
+        SoundPanel.SetActive(true);
+    }
+    
+    public void BackToMainPanel()
+    {
+        MainPanel.SetActive(true);
+        SoundPanel.SetActive(false);
+    }
 
-#warning TODO: Отобразить полосу изменения громкости
+    public void ChangeVolume(float volume)
+    {
+        PlayerPrefs.SetFloat("volume", volume);
     }
 }

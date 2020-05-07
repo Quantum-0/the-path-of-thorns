@@ -299,9 +299,16 @@ public class MovePlayer : MonoBehaviour
 
     void AudioSystem(string nameOfClip)
     {
-        if(PlayerPrefs.GetInt("sound") > 0)
+        var a = GetComponents<AudioSource>().FirstOrDefault(s => s.clip.name == nameOfClip);
+
+        if(a != null)
+{
+            a.volume = PlayerPrefs.GetFloat("volume");
+            a.Play();
+        }
+        else
         {
-            GetComponents<AudioSource>().FirstOrDefault(s => s.clip.name == nameOfClip)?.Play();
+            Debug.Log("Звук не найден");
         }
     }
 
